@@ -1,0 +1,68 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "title":"sighting Report",
+    "description": "sighting data for the National University of Exland.",
+    "properties": {
+      "sighting": {
+        "type": "array",
+        "items": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "animal": {
+                "type": "string",
+                "enum": ["Beaver","Hare", "Pine Martin", "Otter",  "Snowy Owl"]
+              },
+              "number": {
+                "type": "integer"
+              },
+              "location": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              },
+              "time": {
+                "type": "string"
+              },
+              "observer": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "name",
+                  "email"
+                ]
+            },
+            "observations": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "animal",
+            "number",
+            "location",
+            "date",
+            "time",
+            "observer",
+            "observations"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "sighting"
+  ]
+}
